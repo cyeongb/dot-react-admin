@@ -29,8 +29,8 @@ const ProductCreate = (props) => {
           validate={required()}
         />
         <TextInput multiline source="body" placeholder="내용" title="내용" />
-        <TextInput source="name" placeholder="이름" title="이름" />
-        <PasswordInput
+        {/* <TextInput source="name" placeholder="이름" title="이름" /> */}
+        {/* <PasswordInput
           source="password"
           placeholder="비밀번호"
           title="비밀번호"
@@ -40,15 +40,10 @@ const ProductCreate = (props) => {
         <NumberInput source="x" placeholder="x 좌표" title="x" />
         <NumberInput source="y" placeholder="y 좌표" title="y" />
         <Separator />
-        <DateInput
-          source="publishedAt"
-          placeholder="작성날짜"
-          title="작성날짜"
-          defaultValue={Date()}
-        />
+      
         <FileInput source="pictures" accept="image/*">
           <FileField source="src" title="title" />
-        </FileInput>
+        </FileInput> */}
       </SimpleForm>
     </Create>
 

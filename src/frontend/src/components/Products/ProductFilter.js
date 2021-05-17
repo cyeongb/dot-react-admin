@@ -7,7 +7,7 @@ const ProductFilter = (props) => {
     <Filter {...props}>
         <SearchInput source="q" alwaysOn />
         <BooleanInput source="is_published" alwaysOn />
-        <DateInput source="publishedAt"  />
+      
     </Filter>
     )
 };

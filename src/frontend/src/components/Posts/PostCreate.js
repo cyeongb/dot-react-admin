@@ -12,11 +12,15 @@ import {
   DateTimeInput,
   FileInput,
   FileField,
+  SaveButton,
 } from "react-admin";
 
 import { Typography, Box } from "@material-ui/core";
 
 const Separator = () => <Box pt="1em" />;
+const clickSave = (e) => {
+  console.log(e);
+};
 
 const PostCreate = (props) => {
   return (
@@ -46,9 +50,20 @@ const PostCreate = (props) => {
           title="작성날짜"
           defaultValue={Date()}
         />
-        <FileInput source="pictures" accept="image/*">
+        <FileInput
+          source="pictures"
+          accept="image/*"
+          placeholder={<p>클릭해서 파일을 가져오세요</p>}
+        >
           <FileField source="src" title="title" />
         </FileInput>
+        <SaveButton
+          placeholder="등록하기"
+          title="등록하기"
+          //onclick, onsubmit  하면 typeError: handleSubmitWithRedirect is not a function 남.
+        >
+          등록하기
+        </SaveButton>
       </SimpleForm>
     </Create>
 

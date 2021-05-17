@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   List,
   Datagrid,
@@ -6,28 +6,27 @@ import {
   DateField,
   EditButton,
   DeleteButton,
-  DateTimeInput
-} from 'react-admin';
-import ProductListActions from './ProductListActions';
-import ProductFilter from './ProductFilter';
+  DateTimeInput,
+} from "react-admin";
+import ProductListActions from "./ProductListActions";
+import ProductFilter from "./ProductFilter";
 const ProductList = ({ permissions, ...props }) => {
-  console.log('ProductList() props : ', props);
+  console.log("ProductList() props : ", props);
   return (
     <div>
       <List
         {...props}
-        title='Product Management'
+        title="Product Management"
         actions={<ProductListActions permissions={permissions} />}
         filters={<ProductFilter />}
         filterDefaultValues={{ is_published: true }}
-        sort={{ field: 'publishedAt', order: 'DESC' }} //제일 최근에 작성한 글이 맨 위로 올라오도록
+        sort={{ field: "id", order: "DESC" }}
       >
         <Datagrid optimized rowClick="show">
-          <TextField source='id' />
-          <TextField source='title' />
-          <TextField source='name' />
-          <DateField source='publishedAt' />
-      
+          <TextField source="id" />
+          <TextField source="title" />
+          <TextField source="body" />
+          {/* <TextField source="name" /> */}
         </Datagrid>
       </List>
     </div>
